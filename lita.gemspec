@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 2.7.6"
 
   spec.metadata = {
     "bug_tracker_uri"   => "https://github.com/litaio/lita/issues",
