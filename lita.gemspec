@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jimmy@jimmycuadra.com"]
   spec.description   = "ChatOps for Ruby."
   spec.summary       = "ChatOps framework for Ruby. Lita is a robot companion for your chat room."
-  spec.homepage      = "https://github.com/litaio/lita"
+  spec.homepage      = "https://github.com/acima-credit/lita"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -22,12 +22,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata = {
-    "bug_tracker_uri"   => "https://github.com/litaio/lita/issues",
-    "changelog_uri"     => "https://github.com/litaio/lita/releases",
-    "documentation_uri" => "https://docs.lita.io/",
-    "homepage_uri"      => "https://www.lita.io/",
-    "mailing_list_uri"  => "https://groups.google.com/group/litaio",
-    "source_code_uri"   => "https://github.com/litaio/lita",
+    "source_code_uri" => "https://github.com/acima-credit/lita",
   }
 
   spec.add_runtime_dependency "bundler", "~> 2.3.7"
