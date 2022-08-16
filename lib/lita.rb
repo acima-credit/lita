@@ -25,6 +25,10 @@ module Lita
     attr_reader :test_mode
     alias test_mode? test_mode
 
+    # Makes it easier to access the bot in places it would otherwise be difficult
+    # or impossible e.g. a sidekiq worker
+    attr_reader :robot
+
     # Sets both I18n.default_locale and I18n.locale to the provided locale, if any.
     # @api private
     # @since 5.0.0
@@ -110,7 +114,8 @@ module Lita
     # @return [void]
     def run(config_path = nil)
       load_config(config_path)
-      Robot.new.run
+      @robot = Robot.new
+      @robot.run
     end
 
     # Turns test mode on or off.

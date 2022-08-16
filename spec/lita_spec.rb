@@ -224,4 +224,18 @@ describe Lita do
       described_class.run("path/to/config")
     end
   end
+
+  describe ".robot" do
+    let(:robot) { instance_double("Lita::Robot", run: nil) }
+
+    before do
+      allow(Lita::Robot).to receive(:new).and_return(robot)
+    end
+
+    it "returns the instance of the robot" do
+      described_class.run
+
+      expect(described_class.robot).to eq(robot)
+    end
+  end
 end
