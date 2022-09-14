@@ -238,4 +238,10 @@ describe Lita do
       expect(described_class.robot).to eq(robot)
     end
   end
+
+  describe ".root" do
+    it "returns the root path of the lita project" do
+      expect(Lita.root).to eq(Dir.pwd)
+    end
+  end
 end
