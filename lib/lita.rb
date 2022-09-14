@@ -84,6 +84,10 @@ module Lita
       I18n.default_locale = new_locale.to_s.tr("_", "-")
     end
 
+    def root
+      @root ||= Dir.pwd
+    end
+
     # The absolute path to Lita's templates directory.
     # @return [String] The path.
     # @since 3.0.0
