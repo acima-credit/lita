@@ -4,6 +4,7 @@ require "set"
 
 require "i18n"
 require "faraday"
+require "faraday/rack"
 
 require_relative "../adapters/test"
 require_relative "../message"
