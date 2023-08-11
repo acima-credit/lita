@@ -6,7 +6,16 @@ require "lita/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "lita"
-  spec.version       = Lita::VERSION
+
+  current_branch = `git branch --show-current`.strip
+  branch_commit = `git rev-parse HEAD`.strip[0..6]
+
+  if current_branch == 'main'
+    spec.version = Lita::VERSION
+  else
+    spec.version = "#{Lita::VERSION}-#{branch_commit}"
+  end
+
   spec.authors       = ["Jimmy Cuadra"]
   spec.email         = ["jimmy@jimmycuadra.com"]
   spec.description   = "ChatOps for Ruby."
@@ -21,9 +30,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.0.0"
 
-  spec.metadata = {
-    "source_code_uri" => "https://github.com/acima-credit/lita",
-  }
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = spec.homepage
+  spec.metadata['changelog_uri'] = spec.homepage
+  spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/acima-credit'
 
   spec.add_runtime_dependency "bundler", "~> 2.3.7"
   spec.add_runtime_dependency "faraday", "~> 2.5.2"
